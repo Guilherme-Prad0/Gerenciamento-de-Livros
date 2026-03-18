@@ -21,6 +21,11 @@ public class LivroService {
         return livroRepository.findAll();
     }
 
+    public LivroModel findById(Long id) {
+        return livroRepository.findById(id)
+                .orElse(null);
+    }
+
     public void delete(Long id){
         livroRepository.deleteById(id);
     }
